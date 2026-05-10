@@ -12,5 +12,7 @@ jobs:
         uses: actions/checkout@v6
       - name: Show up tree
         run: tree .
+      - name: Pull selenoid image
+        run: docker pull selenoid/chrome:128.0
       - name: Run tests in docker
         run: docker compose up --build --exit-code-from test_docker 
