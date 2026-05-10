@@ -1,0 +1,14 @@
+name: test before push
+on: # [push, pull_request]
+  push:
+    branches:
+      - '**' # '**' all branches,  master if only one
+
+jobs:
+  chechout-and-print-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Show up tree
+        run: tree .
